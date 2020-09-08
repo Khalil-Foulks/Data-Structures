@@ -140,9 +140,31 @@ class DoublyLinkedList:
             # there is nothing to remove so return None
             return None
         # if 1 node exists in DLL
-        if self.head == self.tail
+        if self.head == self.tail:
+            # store current tail
+            current_tail = self.tail
+            # set head and tail to None
+            self.head == None
+            self.tail == None
+            # remove 1 from length
+            self.length -= 1
+            # return removed tail 
+            return current_tail.value
         # if > 1 node exists in DLL
-            
+        else:
+        # Start at head and iterate to the next-to-last node
+            current_node = self.head
+        # Stop when current_node.next == self.tail
+            while current_node.next == self.tail:
+            # once we exit the while loop, current_node is pointing to the tail
+        #Save the current_tail value
+                tail_value = current_node.next.value
+        # Set self.tail to current_node 
+                self.tail = current_node
+        # Set current_node.next to None
+                current_node.next = None
+                self.length -= 1
+                return tail_value
     """
     Removes the input node from its current spot in the 
     List and inserts it as the new head node of the List.
