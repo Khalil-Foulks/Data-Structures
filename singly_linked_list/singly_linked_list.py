@@ -54,7 +54,7 @@ class LinkedList:
             return current_head.value
 
     def remove_tail(self):
-        # If there is no head
+        # If there is no tail
         if not self.tail:
             return None 
 
@@ -71,7 +71,7 @@ class LinkedList:
         else:
         # Start at head and iterate to the next-to-last node
             current_node = self.head
-        # Stop when current_node.next == self.tail
+        # Stop when (current_node's pointer is pointing to tail)
             while current_node.next == self.tail:
             # once we exit the while loop, current_node is pointing to the node
         #Save the current_tail value

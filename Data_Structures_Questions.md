@@ -3,30 +3,42 @@ Answer the following questions for each of the data structures you implemented a
 ## Stack
 
 1. What is the runtime complexity of `push` using a list?
+O(1) - push method uses the index to find start of array and add before the prev start of the array.
 
 2. What is the runtime complexity of `push` using a linked list?
+O(1) - Add to head just needs a new head node and a pointer pointing it to the prev head.
 
 3. What is the runtime complexity of `pop` using a list?
+O(1) - pop method uses the last index of list to add to the end
 
 4. What is the runtime complexity of `pop` using a linked list?
+O(1) - you just need to change the prev head to the new head 
 
 5. What is the runtime complexity of `len` using a list?
+O(1)- the array doesn't need to be iterated over 
 
 6. What is the runtime complexity of `len` using a linked list?
+O(n) - The linked list neads to be interated over
 
 ## Queue
 
 1. What is the runtime complexity of `enqueue` using a list?
+O(1) - push method uses the index to find start of array and add before the prev start of the array.
 
 2. What is the runtime complexity of `enqueue` using a linked list?
+O(1) - you just need to change the prev tail to point to the new tail, new tail point to none
 
 3. What is the runtime complexity of `dequeue` using a list?
+O(1) - pop method uses the last index of list to add to the end
 
 4. What is the runtime complexity of `dequeue` using a linked list?
+O(1) - you just need to change the prev head to the new head 
 
 5. What is the runtime complexity of `len` using a list?
+O(1)- the array needs to be iterated over
 
 6. What is the runtime complexity of `len` using a linked list?
+O(n) - The linked list neads to be interated over
 
 ## Doubly Linked List
 
