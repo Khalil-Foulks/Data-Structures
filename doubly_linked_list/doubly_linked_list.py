@@ -39,7 +39,7 @@ class DoublyLinkedList:
             self.length += 1
         
         # if any node in LinkedList
-        if self.head == self.tail:
+        else:
             # store old head
             old_head = self.head        
             # use value to create new head node 
@@ -59,41 +59,28 @@ class DoublyLinkedList:
     Removes the List's current head node, making the
     current head's next node the new head of the List.
     Returns the value of the removed Node.
-    """
+    """  
     def remove_from_head(self):
         # if head doesn't exist
-        if not self.head:
-            # there is nothing to remove so return None
+        if self.head is None:
             return None
-
         # if 1 node in LinkedList
-        if self.head == self.tail:
-            # store current head
-            current_head = self.head
-            # set head and tail to None
-            self.head == None
-            self.tail == None
-            # remove 1 from length
-            self.length -= 1
-            # return removed head 
-            return current_head.value
-
+        if self.head.next is None:
+            head_val = self.head.value
+            self.head = None
+            self.tail = None
+            self.length = 0
+            return head_val
         # if > 1 node in LinkedList
         else:
-            # store current head
-            current_head = self.head
-            # store the value of current head's pointer to next
-            new_head = current_head.next
-            # set current head next pointer to None
-            current_head.next = None
-            # set head to new head
-            self.head = new_head
-            # change new head prev pointer to None
-            new_head.prev = None
+            # store current head value
+            head_val = self.head.value
+            # set head to old head's pointer to next node
+            self.head = self.head.next
             # remove 1 from length
             self.length -= 1
-            # return removed head 
-            return current_head.value
+            # return removed head
+            return head_val    
 
             
     """
@@ -136,35 +123,30 @@ class DoublyLinkedList:
     """
     def remove_from_tail(self):
         # if tail doesn't exist
-        if not self.tail:
+        if self.tail is None:
             # there is nothing to remove so return None
             return None
         # if 1 node exists in DLL
-        if self.head == self.tail:
-            # store current tail
-            current_tail = self.tail
+        if self.tail.prev is None:
+            # store current tail value
+            tail_val = self.tail.value
             # set head and tail to None
-            self.head == None
-            self.tail == None
+            self.head = None
+            self.tail = None
             # remove 1 from length
-            self.length -= 1
+            self.length = 0
             # return removed tail 
-            return current_tail.value
+            return tail_val
         # if > 1 node exists in DLL
         else:
-        # Start at head and iterate to the next-to-last node
-            current_node = self.head
-        # Stop when current_node.next == self.tail
-            while current_node.next == self.tail:
-            # once we exit the while loop, current_node is pointing to the tail
-        #Save the current_tail value
-                tail_value = current_node.next.value
-        # Set self.tail to current_node 
-                self.tail = current_node
-        # Set current_node.next to None
-                current_node.next = None
-                self.length -= 1
-                return tail_value
+            # store current tail value
+            tail_val = self.tail.value
+            # set tail to old tail's prev
+            self.tail = self.tail.prev
+            # remove 1 from length
+            self.length -= 1
+            # return removed old tail value
+            return tail_val
     """
     Removes the input node from its current spot in the 
     List and inserts it as the new head node of the List.
