@@ -85,7 +85,19 @@ class BSTNode:
 
     # Call the function `fn` on the value of each node
     def for_each(self, fn):
-        pass
+        # run the function passing in the value of the node
+        fn(self.value)
+
+        #if left is not none run for each on left
+        if self.left != None:
+            # call function on left
+            self.left.for_each(fn)
+
+
+        # if right is not None run for each on right
+        if self.right != None:
+            # call function on right
+            self.right.for_each(fn)
 
     # Part 2 -----------------------
 
@@ -114,13 +126,6 @@ class BSTNode:
     # Print Post-order recursive DFT
     def post_order_dft(self):
         pass
-
-bst = BSTNode(5)
-bst.insert(2)
-bst.insert(3)
-bst.insert(7)
-bst.insert(6)
-print(bst.right.value)
 
 
 # """
