@@ -75,12 +75,16 @@ DLL = O(1)  Array.splice = O(n) because it has to potentially copy over all the 
 ## Binary Search Tree
 
 1. What is the runtime complexity of `insert`? 
+O(log n) - checking half the tree each time
 
 2. What is the runtime complexity of `contains`?
+O(log n) - checking half the tree each time
 
 3. What is the runtime complexity of `get_max`? 
+O(log n)
 
 4. What is the runtime complexity of `for_each`?
+O(n)
     
 ## Heap
 
